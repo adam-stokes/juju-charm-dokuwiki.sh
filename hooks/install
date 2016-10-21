@@ -1,0 +1,17 @@
+#!/bin/bash -eux
+
+. ./hooks/common.sh
+
+app_path=$(config-get app_path)
+
+if ! -d "$app_path"; then
+    mkdir -p "$app_path"
+fi
+
+wget -q -O /tmp/dokuwiki.tgz http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
+tar xf /tmp/dokuwiki.tgz -C #{app_path} --strip-components=1
+
+if ! -f "$app_path/conf/install.php"; then
+    log "Removing installer file"
+    rm -rf "$app_path/conf/install.php"
+fi
