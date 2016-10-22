@@ -26,4 +26,4 @@ fi
 
 conjure-up -d ./dokuwiki-spell localhost || exit 1
 
-curl --silent $(unitAddress)|grep -qP 'start \[Dokuwiki\]' || exit 1
+curl --silent $(unitAddress)|grep -P 'start \[Dokuwiki\]'
