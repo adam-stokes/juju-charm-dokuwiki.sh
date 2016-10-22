@@ -3,3 +3,7 @@
 . ./hooks/common.sh
 
 log "config-changed"
+
+
+./hooks/stop
+./hooks/start

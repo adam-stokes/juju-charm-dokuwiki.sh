@@ -2,4 +2,8 @@
 
 . ./hooks/common.sh
 
-log "start hook"
+log "Starting NGINX"
+systemctl start nginx.service
+
+log "Starting PHP7-FPM"
+systemctl start php7.0-fpm.service

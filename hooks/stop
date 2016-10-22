@@ -2,4 +2,8 @@
 
 . ./hooks/common.sh
 
-log "stop hook"
+log "Stopping NGINX"
+systemctl stop nginx.service
+
+log "Stopping PHP7-FPM"
+systemctl stop php7.0-fpm.service
