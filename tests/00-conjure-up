@@ -26,4 +26,5 @@ fi
 
 conjure-up -d ./dokuwiki-spell localhost
 
-curl --silent $(unitAddress)|grep -P 'start \[Dokuwiki\]'
+printf "Checking if Dokuwiki is reachable and has correct page header\n" && \
+    curl --silent $(unitAddress)|grep -qP 'start \[Dokuwiki\]'
